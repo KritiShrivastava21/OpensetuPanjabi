@@ -1,153 +1,333 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="pa">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpenSetu Hero</title>
+  <title>OpenSetu</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    /* Menu bar styling */
+    .top-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 12px 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-menu a {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .top-menu a:hover {
+      color: #007BFF;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Side menu */
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 2000;
+    }
+    .side-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .side-menu a:hover {
+      color: #007BFF;
+    }
+    .side-menu .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .top-menu a {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  </style>
 </head>
 <body class="page">
+
+  <!-- Top Menu -->
+<nav class="top-menu">
+  <a href="index.html">ਹੋਮ</a>
+  <a href="about.html">ਸਾਡੇ ਬਾਰੇ</a>
+  <a href="beta.html">ਕਾਨੂੰਨੀ</a>
+  <a href="documentation.html">ਡਾਕਯੂਮੈਂਟੇਸ਼ਨ</a>
+  <a href="domain.html">ਡੋਮੇਨ ਲਿਸਟ</a>
+  <button class="menu-toggle" onclick="openMenu()"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+  <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+  <a href="index.html">ਹੋਮ</a>
+  <a href="about.html">ਸਾਡੇ ਬਾਰੇ</a>
+  <a href="beta.html">ਕਾਨੂੰਨੀ</a>
+  <a href="documentation.html">ਡਾਕਯੂਮੈਂਟੇਸ਼ਨ</a>
+  <a href="domain.html">ਡੋਮੇਨ ਲਿਸਟ</a>
+</div>
+
 
   <div class="tilted-bg"></div>
 
   <section class="hero">
     <div class="hero-text">
-      <h1 class="hero-title">1.4 ਅਰਬ ਆਵਾਜ਼ਾਂ,<br>
-        22 ਭਾਸ਼ਾਵਾਂ,<br>
-        ਇੱਕ ਇੰਟਰਨੈੱਟ<br>
-        &amp; ਤੁਸੀਂ
+      <h1 class="hero-title">150 ਕਰੋੜ ਆਵਾਜ਼,<br>
+        23 ਭਾਸ਼ਾ,<br>
+        ਇਕੱਠੇ ਇਕ ਇੰਟਰਨੈਟ ‘ਤੇ।
       </h1>
       <p class="hero-lead">
-        ਓਪਨਸੇਟੂ ਤੁਹਾਨੂੰ ਤੁਹਾਡੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਇੰਟਰਨੈੱਟ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦਿੰਦਾ ਹੈ। ਕਿਸੇ ਐਪ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।
-        <br><br>ਬਸ ਆਪਣੀਆਂ ਬ੍ਰਾਊਜ਼ਰ ਸੈਟਿੰਗਾਂ ਬਦਲੋ ਅਤੇ ਬੂਮ ਕਰੋ, ਵੈੱਬ ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਬੋਲਦਾ ਹੈ।
-        ਇਹ ਬੁਨਿਆਦੀ ਢਾਂਚਾ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ਵੈੱਬ ਦੇ ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ ਸੰਸਕਰਣਾਂ ਨਾਲ ਜੋੜਦਾ ਹੈ।
-        <br><br>ਦੀ ਵਰਤੋਂ ਸ਼ੁਰੂ ਕਰੋ : pranam.opensetu.in
-      </p>
-      <button class="btn-primary">ਦੇਖੋ ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ →</button>
-    </div>
+  ਓਪਨਸੇਤੁ ਤੁਹਾਨੂੰ ਆਪਣੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਇੰਟਰਨੇਟ ਤੱਕ ਪਹੁੰਚ ਦੇਂਦਾ ਹੈ। ਕਿਸੇ ਐਪ ਦੀ ਲੋੜ ਨਹੀਂ।  
+  ਸਿਰਫ ਆਪਣੇ ਬ੍ਰਾਉਜ਼ਰ ਸੈਟਿੰਗਜ਼ ਬਦਲੋ, ਅਤੇ ਵੈੱਬ ਤੁਹਾਡੇ ਭਾਸ਼ਾ ਵਿੱਚ ਗੱਲ ਕਰੇਗਾ।  
+  <br><br>ਇਹ ਢਾਂਚਾ ਤੁਹਾਨੂੰ ਵੈੱਬ ਦੇ ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ ਵਰਜਨਾਂ ਨਾਲ ਜੋੜਦਾ ਹੈ।  
+  <br><br>ਓਪਨਸੇਤੁ ਵਰਤਣਾ ਸ਼ੁਰੂ ਕਰੋ:
+</p>
+
+
+<div class="link-box">
+  <span id="opensetu-link">https://pranam.opensetu.in</span>
+  <button id="copy-btn" title="Copy link">
+    <i class="fa-solid fa-copy"></i>
+  </button>
+</div>
+
+<script>
+  document.getElementById("copy-btn").addEventListener("click", function() {
+    const text = document.getElementById("opensetu-link").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Link copied!");
+    });
+  });
+</script>
+
+
+     <button class="btn-primary" onclick="scrollToVideo()">ਵੇਖੋ ਕਿ ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ →</button>
+</div>
+
+
     <div class="hero-image">
-      <img src="img1.png" alt="ਵੇਰਵਾ" />
+      <img src="img1.png" alt="Descriptive text" />
     </div>
   </section>
 
-  <section class="info-section"> 
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">ਓਪਨਸੇਟੂ ਕੀ ਕਰਦਾ ਹੈ?</h2>
-        <p>ਓਪਨਸੇਟੂ ਇੱਕ DNS ਰੈਜ਼ੋਲਵਰ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ਆਪਣੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਜਨਤਕ ਵਸਤੂਆਂ ਅਤੇ ਸਰਕਾਰੀ ਉਪਯੋਗਤਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ। ਬਸ ਆਪਣੀ ਡੋਮੇਨ ਦਾ ਨਾਮ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਟਾਈਪ ਕਰੋ ਅਤੇ ਇਹ ਇਸਨੂੰ ਅਧਿਕਾਰਤ ਸਾਈਟ ਦੇ ਭਾਸ਼ਾ ਸੰਸਕਰਣ ਵਿੱਚ ਰੀਡਾਇਰੈਕਟ ਕਰ ਦੇਵੇਗਾ।</p>
-        <p>ਉਦਾਹਰਣ ਵਜੋਂ, ਜੇਕਰ ਤੁਸੀਂ ਹਿੰਦੀ ਬੋਲਣ ਵਾਲੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ <span class="highlight">पीएमकिसान.सर.भा</span> ਟਾਈਪ ਕਰਕੇ pmkisan.gov.in 'ਤੇ ਜਾ ਸਕਦੇ ਹੋ ਜਾਂ ਜੇਕਰ ਤੁਸੀਂ ਤਾਮਿਲ ਭਾਸ਼ਾ ਵਰਤਦੇ ਹੋ ਤਾਂ ਸਿਰਫ਼ <span class="highlight">பிஎம்கிசான்.ப</span> ਆਦਿ ਟਾਈਪ ਕਰ ਸਕਦੇ ਹੋ।</p>
-        <p class="small">ਬੇਦਾਅਵਾ: ਓਪਨਸੇਟੂ, ਹੁਣ ਤੱਕ, ਸਿਰਫ਼ ਉਹਨਾਂ ਵੈੱਬਸਾਈਟਾਂ ਨੂੰ ਰੀਡਾਇਰੈਕਟ ਕਰਦਾ ਹੈ ਜੋ URL ਰਾਹੀਂ ਭਾਸ਼ਾ ਸੰਸਕਰਣਾਂ ਦਾ ਸਮਰਥਨ ਕਰਦੀਆਂ ਹਨ। ਜੇਕਰ ਕੋਈ ਵੈੱਬਸਾਈਟ ਭਾਸ਼ਾ ਬਦਲਣ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰਨ ਲਈ ਜਾਵਾਸਕ੍ਰਿਪਟ ਜਾਂ ਕੂਕੀਜ਼ ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ, ਤਾਂ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਸਾਈਟ ਦੇ ਭਾਸ਼ਾ ਚੋਣਕਾਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਭਾਸ਼ਾ ਨੂੰ ਹੱਥੀਂ ਬਦਲਣ ਦੀ ਲੋੜ ਹੋਵੇਗੀ।</p>
-      </div>
-      <div class="image-block">
-        <img src="img2.png" alt="ਓਪਨਸੇਟੂ ਉਦਾਹਰਣ" class="info-image">
-      </div>
-    </div>
-  </section>
+  <script>
+    // Copy button
+    document.getElementById("copy-btn").addEventListener("click", function () {
+      const linkText = document.getElementById("opensetu-link").textContent;
+      navigator.clipboard.writeText(linkText).then(() => {
+        alert("Link copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    });
 
-  <section class="info-section">
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">ਅਨੁਵਾਦਕ ਨਹੀਂ,<br>ਓਪਨਸੇਟੂ ਨਵੇਂ ਇੰਟਰਨੈੱਟ ਲਈ ਇੱਕ ਪੁਲ ਹੈ</h2>
-        <p>ਇੱਥੇ ਕੋਈ ਅੰਗਰੇਜ਼ੀ ਬਾਊਂਸਰ ਨਹੀਂ ਹਨ। ਇਹ ਭਾਰਤ ਦਾ ਆਪਣਾ ਇੰਟਰਨੈੱਟ ਹੈ, ਜਿੱਥੇ:</p>
-        <ul class="feature-list">
-          <li>ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਡਿਫਾਲਟ ਹੈ, ਅਪਵਾਦ ਨਹੀਂ।</li>
-          <li>ਪੁਰਾਣਾ ਇੰਟਰਨੈੱਟ ਪਹਿਲਾਂ ਵਾਂਗ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ।</li>
-          <li>ਹੁਣ ਆਪਣੀ ਮੂਲ ਲਿਪੀ ਵਿੱਚ ਵੈੱਬਸਾਈਟਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰੋ।</li>
-          <li>ਹਰੇਕ ਨਾਗਰਿਕ ਨੂੰ ਡਿਜੀਟਲ ਜਨਤਕ ਵਸਤੂਆਂ ਤੱਕ ਪਹੁੰਚ ਮਿਲਦੀ ਹੈ।</li>
-        </ul>
-      </div>
-      <div class="image-block">
-        <img src="img3.png" alt="ਨਵਾਂ ਇੰਟਰਨੈੱਟ" class="info-image">
-      </div>
-    </div>
-  </section>
+    // Side menu functions
+    function openMenu() {
+      document.getElementById("sideMenu").style.width = "250px";
+    }
+    function closeMenu() {
+      document.getElementById("sideMenu").style.width = "0";
+    }
+  </script>
 
-  <section class="info-section">
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">ਤੁਸੀਂ ਜਦ ਤਿਆਰ, ਅਸੀਂ ਤਿਆਰ!</h2>
-        <p>ਅੱਜ, ਓਪਨਸੇਟੂ 'ਤੇ, ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਆਧਾਰ, ਡਿਜੀਲਾਕਰ, ਯੂਪੀਆਈ, ਹੈਲਥ ਆਈਡੀ, ਰਾਸ਼ਨ, ਪੀਐਮ ਕਿਸਾਨ, ਰੁਜ਼ਗਾਰ ਸੇਵਾਵਾਂ ਵਰਗੀਆਂ ਸਾਰੀਆਂ ਪ੍ਰਮੁੱਖ ਜਨਤਕ ਸਹੂਲਤਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦੇ ਹੋ!</p>
-        <p>ਅਸੀਂ ਜਨਤਕ ਬੁਨਿਆਦੀ ਢਾਂਚੇ ਨਾਲ ਸ਼ੁਰੂ ਕਰ ਰਹੇ ਹਾਂ, ਅਸੀਂ ਸਥਾਨਕ ਭਾਰਤ ਵਿੱਚ ਪੂਰੀ ਡਿਜੀਟਲ ਦੁਨੀਆ ਲਿਆਉਣ ਲਈ ਸਰਕਾਰਾਂ, ਸਟਾਰਟਅੱਪਸ ਅਤੇ ਨਿੱਜੀ ਪਲੇਟਫਾਰਮਾਂ ਨਾਲ ਕੰਮ ਕਰਾਂਗੇ।</p>
-      </div>
-      <div class="image-block">
-        <img src="img4.png" alt="ਤਿਆਰ" class="info-image">
-      </div>
-    </div>
-  </section>
+<section class="info-section"> 
+  <div class="info-wrapper">
+    <div class="text-block">
+      <h2 class="section-title">ਓਪਨਸੇਤੁ ਕੀ<br>ਕਰਦਾ ਹੈ?</h2>
+      <p>ਓਪਨਸੇਤੁ ਇੱਕ DNS ਰੀਜ਼ਾਲਵਰ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ਆਪਣੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਪਬਲਿਕ ਗੁਡਜ਼ ਅਤੇ ਸਰਕਾਰੀ ਯੂਟਿਲਿਟੀਜ਼ ਤੱਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ। ਸਿਰਫ ਆਪਣੇ ਡੋਮੇਨ ਦਾ ਨਾਮ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਟਾਈਪ ਕਰੋ ਅਤੇ ਇਹ ਸਰਕਾਰੀ ਸਾਈਟ ਦੇ ਭਾਸ਼ਾ ਵਰਜ਼ਨ ਵੱਲ ਰੀਡਾਇਰੈਕਟ ਕਰ ਦੇਵੇਗਾ।</p>
+      <p>
+  <strong>ਉਦਾਹਰਣ ਲਈ,</strong> ਜੇ ਤੁਸੀਂ ਹਿੰਦੀ ਬੋਲਣ ਵਾਲੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਸਿਰਫ ਟਾਈਪ ਕਰਕੇ 
+  <span class="highlight">ਪੀਐਮਕਿਸਾਨ.ਗਵ.ਭ</span> 
+  ਦੇਵਨਾਗਰੀ ਵਿੱਚ pmkisan.gov.in ਵੇਖ ਸਕਦੇ ਹੋ। <br>
+  ਤੁਸੀਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਡੋਮੇਨਾਂ ਦੀ ਪੂਰੀ ਸੂਚੀ 
+  <a href="domain.html">ਡੋਮੇਨ ਲਿਸਟ</a> ‘ਤੇ ਵੇਖ ਸਕਦੇ ਹੋ।
+</p>
 
-  <section class="last info-section">
-    <div class="container center-content">
-      <h2 class="section-title">ਕਿਵੇਂ ਸ਼ੁਰੂਆਤ ਕਰੀਏ</h2>
-      <p>ਇੱਕ ਬਦਲਾਅ। ਇੱਕ ਬਿਲਕੁਲ ਨਵਾਂ ਇੰਟਰਨੈੱਟ।</p>
-
-      <div class="video-wrapper">
-        <video src="your-video.mp4" controls></video>
-      </div>
+      <p class="small"><strong>ਅਸਵੀਕਾਰਾਂ:</strong> 
+        ਇਸ ਸਮੇਂ ਲਈ, ਓਪਨਸੇਤੁ ਸਿਰਫ ਉਹਨਾਂ ਵੈੱਬਸਾਈਟਾਂ ਵੱਲ ਰੀਡਾਇਰੈਕਟ ਕਰਦਾ ਹੈ ਜੋ URL ਰਾਹੀਂ ਭਾਸ਼ਾ ਵਰਜ਼ਨ ਸਹਾਇਤਾ ਕਰਦੀਆਂ ਹਨ। ਜੇ ਕੋਈ ਵੈੱਬਸਾਈਟ ਭਾਸ਼ਾ ਬਦਲਣ ਲਈ ਜਾਵਾਸਕ੍ਰਿਪਟ ਜਾਂ ਕੁਕੀਜ਼ ਵਰਤਦੀ ਹੈ, ਤਾਂ ਯੂਜ਼ਰਾਂ ਨੂੰ ਸਾਈਟ ਦੇ ਭਾਸ਼ਾ ਸਿਲੈਕਟਰ ਨਾਲ ਹੱਥੋਂ ਭਾਸ਼ਾ ਬਦਲਣੀ ਪਏਗੀ।</p>
+ </div>
+    <div class="image-block">
+      <img src="img2.png" alt="ਓਪਨਸੇਤੁ ਉਦਾਹਰਣ" class="info-image">
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cta-section">
-    <div class="cta-gradient-layer"></div>
-    <div class="cta-inner">
-      <h2>ਇਹ ਤਾਂ ਬਸ ਸ਼ੁਰੂਆਤ ਹੈ</h2>
-      <div class="cta-grid">
-        <div>
-          <p class="cta-desc">ਆਧਾਰ, ਡਿਜਿਲੌਕਰ, ਯੂ.ਪੀ.ਆਈ., ਗੂਗਲ,<br>X, B.T.C</p>
-          <h3>ਜਨਤਕ ਸਹੂਲਤਾਂ</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ਤੁਹਾਡੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਜੜ੍ਹਾਂ ਵਾਲੀਆਂ ਤਸਦੀਕਯੋਗ ਡਿਜੀਟਲ ਪਛਾਣਾਂ।</p>
-          <h3>ਡਿਜੀਟਲ ਨਾਗਰਿਕਤਾ</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ਤੁਹਾਡੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਡੋਮੇਨ ਨਾਮ ਅਤੇ ਵਿਅਕਤੀਗਤ ਈਮੇਲ ਆਈਡੀ।</p>
-          <h3>ਸਥਾਨਕ ਪਛਾਣ</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ਭਾਰਤ ਕਾ ਇੰਟਰਨੈੱਟ 'ਤੇ ਆਪਣਾ ਖੁਦ ਦਾ DOH ਰੈਜ਼ੋਲਵਰ ਜਾਂ ਸੇਵਾਵਾਂ ਬਣਾਓ।</p>
-          <h3>ਇਸ 'ਤੇ ਨਿਰਮਾਣ ਕਰੋ</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ਭਾਰਤ ਲਈ ਬਣਾਏ ਗਏ ਐਪਸ, ਪਲੇਟਫਾਰਮ ਅਤੇ ਸੇਵਾਵਾਂ।</p>
-          <h3>ਡਿਜੀਟਲ ਸਵਦੇਸ਼ੀ</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ਅਤੇ IPFS ਵਰਗੇ ਗਲੋਬਲ Web3 ਬੁਨਿਆਦੀ ਢਾਂਚੇ ਨਾਲ ਏਕੀਕ੍ਰਿਤ ਕਰੋ।</p>
-          <h3>Web3 ਏਕੀਕਰਨ</h3>
-        </div>
-      </div>
+<section class="info-section">
+  <div class="info-wrapper">
+    <div class="text-block">
+      <h2 class="section-title">ਤਰਜੁਮਾ ਕਰਨ ਵਾਲਾ ਨਹੀਂ,
+        <br>ਓਪਨਸੇਤੁ ਇੱਕ ਪੁਲ ਹੈ
+        <br>ਨਵੇਂ ਇੰਟਰਨੇਟ ਤੱਕ।</h2>
+      <p>ਇੱਥੇ ਕੋਈ ਅੰਗਰੇਜ਼ੀ ਬਾਉਂਸਰ ਨਹੀਂ। ਇਹ ਭਾਰਤ ਦਾ ਆਪਣਾ ਇੰਟਰਨੇਟ ਹੈ:</p>
+      <ul class="feature-list">
+        <li>ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਮੁੱਖ ਹੈ, ਇਨਤਜ਼ਾਰ ਨਹੀਂ।</li><br>
+        <li>ਪੁਰਾਣਾ ਇੰਟਰਨੇਟ ਪਹਿਲਾਂ ਵਾਂਗ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ।</li><br>
+        <li>ਹੁਣ ਆਪਣੀ ਮੂਲ ਲਿਪੀ ਵਿੱਚ ਵੈੱਬਸਾਈਟਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰੋ।</li><br>
+        <li>ਹਰ ਨਾਗਰਿਕ ਨੂੰ ਡਿਜੀਟਲ ਪਬਲਿਕ ਗੁਡਜ਼ ਤੱਕ ਪਹੁੰਚ ਮਿਲਦੀ ਹੈ।</li><br>
+      </ul>
     </div>
-  </section>
+    <div class="image-block">
+      <img src="img3.png" alt="ਨਵੇਂ ਇੰਟਰਨੇਟ ਵੱਲ ਪੁਲ" class="info-image">
+    </div>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h3>ਓਪਨਸੇਟੂ</h3>
-        <ul>
-          <li><a href="about.html" class="hover:underline">ਸਾਡੇ ਬਾਰੇ</a></li>
-          <li><a href="privacy.html" class="hover:underline">ਪਰਾਈਵੇਟ ਨੀਤੀ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>ਪੰਨਾ ਲਿੰਕ</h3>
-        <ul>
-          <li><a href="FAQ.html" class="hover:underline">ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ</a></li>
-          <li><a href="documentation.html" class="hover:underline">ਦਸਤਾਵੇਜ਼ੀਕਰਨ</a></li>
-          <li><a href="beta.html" class="hover:underline">ਬੀਟਾ ਸੌਫਟਵੇਅਰ ਚੇਤਾਵਨੀ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>ਸੰਪਰਕ</h3>
-        <ul>
-          <li><a href="#">ਫੇਸਬੁੱਕ</a></li>
-          <li><a href="#">ਲਿੰਕਡਇਨ</a></li>
-          <li><a href="#">ਐਕਸ (ਟਵਿੱਟਰ)</a></li>
-        </ul>
-      </div>
+<section class="info-section">
+  <div class="info-wrapper">
+    <div class="text-block">
+      <p>ਅੱਜ ਓਪਨਸੇਤੁ ‘ਤੇ, ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਸਾਰੇ ਮੁੱਖ ਪਬਲਿਕ ਯੂਟਿਲਿਟੀਜ਼ ਜਿਵੇਂ ਆਧਾਰ, ਡਿਜੀਲਾਕਰ, ਯੂਪੀਐਈ, ਹੈਲਥ ਆਈ.ਡੀ., ਰੇਸ਼ਨ, ਪੀਐਮ ਕਿਸਾਨ, ਰੋਜ਼ਗਾਰ ਸੇਵਾਵਾਂ—ਸਭ ਕੁਝ ਜੋ ਮਹੱਤਵਪੂਰਨ ਹੈ—ਤੱਕ ਪਹੁੰਚ ਸਕਦੇ ਹੋ।</p>
+      <p>ਅਸੀਂ ਪਬਲਿਕ ਢਾਂਚਾ ਨਾਲ ਸ਼ੁਰੂ ਕਰ ਰਹੇ ਹਾਂ, ਅਤੇ ਸਰਕਾਰਾਂ, ਸਟਾਰਟਅਪਸ ਅਤੇ ਪ੍ਰਾਈਵੇਟ ਪਲੇਟਫਾਰਮਾਂ ਨਾਲ ਕੰਮ ਕਰਕੇ ਪੂਰੇ ਡਿਜੀਟਲ ਸੰਸਾਰ ਨੂੰ ਦੇਸੀ ਭਾਰਤ ਤੱਕ ਲਿਆਉਂਗੇ।</p>
     </div>
-    <div class="footer-copy">© 2025 ਓਪਨਸੇਟੂ. ਸਾਰੇ ਅਧਿਕਾਰ ਰਾਖਵੇਂ ਹਨ।</div>
-  </footer>
+    <div class="image-block">
+      <img src="img4.png" alt="ਤਿਆਰ ਚਿੱਤਰ" class="info-image">
+    </div>
+  </div>
+</section>
+
+
+<section id="how-to-get-started" class="last info-section">
+  <div class="container center-content">
+    <h2 class="section-title">ਸ਼ੁਰੂਆਤ ਕਿਵੇਂ ਕਰੀਏ</h2>
+    <p>ਇੱਕ ਬਦਲਾਅ। ਇੱਕ ਨਵਾਂ ਇੰਟਰਨੇਟ।</p>
+
+    <div class="video-wrapper">
+      <video id="get-started-video" src="your-video.mp4" controls></video>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="cta-section">
+  <!-- Gradient trapezium layer -->
+  <div class="cta-gradient-layer"></div>
+
+  <!-- Main content -->
+<div class="cta-inner">
+  <h2>ਇਹ ਸਿਰਫ ਸ਼ੁਰੂਆਤ ਹੈ</h2>
+  <div class="cta-grid">
+    <div>
+      <h3>ਸਰਕਾਰੀ ਯੂਟਿਲਿਟੀਜ਼</h3>
+      <p class="cta-desc">ਆਧਾਰ, ਡਿਜੀਲਾਕਰ, ਯੂਪੀਐਈ, ਗੂਗਲ,
+        <br>X, BTC</p>
+    </div>
+    <div>
+      <h3>ਡਿਜੀਟਲ ਨਾਗਰਿਕਤਾ</h3>
+      <p class="cta-desc">ਤੁਹਾਡੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਸਥਾਪਿਤ ਪ੍ਰਮਾਣਿਕ ਡਿਜੀਟਲ ਪਛਾਣਾਂ।</p>
+    </div>
+    <div>
+      <h3>ਸਥਾਨਕ ਪਛਾਣ</h3>
+      <p class="cta-desc">ਡੋਮੇਨ ਨਾਂ ਅਤੇ ਨਿੱਜੀ
+        <br>ਈਮੇਲ ID ਤੁਹਾਡੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ।</p>
+    </div>
+    <div>
+      <h3>ਇਸ ‘ਤੇ ਬਣਾਓ</h3>
+      <p class="cta-desc">ਆਪਣਾ DOH ਰੀਜ਼ਾਲਵਰ ਜਾਂ
+        <br>ਭਾਰਤ ਦਾ ਇੰਟਰਨੇਟ ‘ਤੇ ਸੇਵਾਵਾਂ ਬਣਾਓ</p>
+    </div>
+    <div>
+      <h3>ਡਿਜੀਟਲ ਸਵਦੇਸੀ</h3>
+      <p class="cta-desc">ਐਪ, ਪਲੇਟਫਾਰਮ ਅਤੇ
+        <br>ਭਾਰਤ ਲਈ ਬਣਾਈਆਂ ਸੇਵਾਵਾਂ।</p>
+    </div>
+    <div>
+      <h3>Web3 ਇੰਟੀਗ੍ਰੇਸ਼ਨ</h3>
+      <p class="cta-desc">ਵਿਸ਼ਵ ਪੱਧਰੀ Web3 ਢਾਂਚੇ ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ
+        <br>ਜਿਵੇਂ .eth ਅਤੇ IPFS।</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>ਓਪਨਸੇਤੁ</h3>
+      <ul>
+        <li><a href="about.html" class="hover:underline">ਸਾਡੇ ਬਾਰੇ</a></li>
+        <li><a href="privacy.html" class="hover:underline">ਪ੍ਰਾਈਵੇਸੀ ਪਾਲਿਸੀ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>ਪੇਜ ਲਿੰਕ</h3>
+      <ul>
+        <li><a href="domain.html" class="hover:underline">ਡੋਮੇਨ ਲਿਸਟ</a></li>
+        <li><a href="documentation.html" class="hover:underline">ਡਾਕਯੂਮੈਂਟੇਸ਼ਨ</a></li>
+        <li><a href="beta.html" class="hover:underline">ਬੇਟਾ ਸਾਫਟਵੇਅਰ ਚੇਤਾਵਨੀ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>ਸੰਪਰਕ</h3>
+      <ul>
+        <li><a href="#">ਫੇਸਬੁੱਕ</a></li>
+        <li><a href="#">ਲਿੰਕਡਇਨ</a></li>
+        <li><a href="#">X (ਟਵਿੱਟਰ)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 ਅਗਾਮਿਨ। ਸਾਰੇ ਅਧਿਕਾਰ ਸੰਰੱਖਿਤ।</div>
+</footer>
+
+  
 
 </body>
+
+<script>
+function scrollToVideo() {
+  const section = document.getElementById('how-to-get-started');
+  section.scrollIntoView({ behavior: 'smooth' });
+
+  const video = document.getElementById('get-started-video');
+  video.play();
+}
+</script>
+
 </html>
