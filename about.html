@@ -1,9 +1,129 @@
 <!DOCTYPE html>
-<html lang="pa">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpenSetu ਸਾਡੇ ਬਾਰੇ</title>
+  <title>OpenSetu About Section</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    /* Menu bar styling */
+    .top-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 12px 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-menu a {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .top-menu a:hover {
+      color: #007BFF;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Side menu */
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 2000;
+    }
+    .side-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .side-menu a:hover {
+      color: #007BFF;
+    }
+    .side-menu .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .top-menu a {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  </style>
+</head>
+<body class="page">
+
+  <!-- Top Menu -->
+<nav class="top-menu">
+  <a href="index.html">ਹੋਮ</a>
+  <a href="about.html">ਸਾਡੇ ਬਾਰੇ</a>
+  <a href="beta.html">ਕਾਨੂੰਨੀ</a>
+  <a href="documentation.html">ਡਾਕਯੂਮੈਂਟੇਸ਼ਨ</a>
+  <a href="domain.html">ਡੋਮੇਨ ਲਿਸਟ</a>
+  <button class="menu-toggle" onclick="openMenu()"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+  <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+  <a href="index.html">ਹੋਮ</a>
+  <a href="about.html">ਸਾਡੇ ਬਾਰੇ</a>
+  <a href="beta.html">ਕਾਨੂੰਨੀ</a>
+  <a href="documentation.html">ਡਾਕਯੂਮੈਂਟੇਸ਼ਨ</a>
+  <a href="domain.html">ਡੋਮੇਨ ਲਿਸਟ</a>
+</div>
+
+
+  <script>
+function openMenu() {
+  document.getElementById("sideMenu").style.width = "250px"; // Adjust width as needed
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").style.width = "0";
+}
+</script>
+
+
+
+
   <style>
     :root {
       --max-width: 1200px;
@@ -139,6 +259,7 @@
       margin: 0;
     }
 
+    /* Breakpoints */
     @media (max-width: 768px) {
       .section { padding: 6rem var(--gutter) 3rem; }
       .about-heading {
@@ -165,35 +286,38 @@
     </div>
 
     <div class="section">
-      <div class="top-container">
-        <div class="top-text">
-          <h1 class="about-heading">ਸਾਡੇ ਬਾਰੇ</h1>
-          <p class="highlight">ਇੱਕ ਪਛਾਣ ਇੱਕ ਵਾਰੀ</p>
-          <h2>ਓਪਨਸੇਤੂ ਭਾਰਤ ਦੇ ਆਪਣੇ ਇੰਟਰਨੈੱਟ ਦਾ ਪੁਲ ਹੈ।</h2>
-          <p>ਅਸੀਂ ਹਰ ਭਾਰਤੀ ਨੂੰ ਆਪਣੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਵੈੱਬ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਾਂ, ਨਾ ਅੰਗਰੇਜ਼ੀ, ਨਾ ਨਵੀਂਆਂ ਐਪਾਂ, ਨਾ ਹੀ ਗੇਟਕੀਪਰ।</p>
-          <p>ਇੱਕ ਮੁਫ਼ਤ, ਵਿਕੇਂਦਰੀਕ੍ਰਿਤ, ਅਤੇ ਸਮਾਵੇਸ਼ੀ ਇੰਟਰਨੈੱਟ ਦੇ ਦ੍ਰਿਸ਼ਟੀਕੋਣ ਤੋਂ ਪੈਦਾ ਹੋਇਆ, OpenSetu ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਹੈਂਡਸ਼ੇਕ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਅਤੇ ਭਾਰਤ ਵਿੱਚ ਜੜ੍ਹਾਂ ਵਾਲੇ ਬਹੁ-ਭਾਸ਼ਾਈ ਵੈੱਬ ਨੂੰ ਅਨਲੌਕ ਕਰਨ ਲਈ ਆਪਣੀਆਂ DNS ਸੈਟਿੰਗਾਂ ਨੂੰ ਬਦਲਣ ਦਿੰਦਾ ਹੈ। ਇਹ ਤੁਹਾਡੀਆਂ ਸ਼ਰਤਾਂ 'ਤੇ ਇੰਟਰਨੈੱਟ ਹੈ, ਜਿੱਥੇ ਡੋਮੇਨ ਨਾਮ ਵਿਦੇਸ਼ੀ ਲਿਪੀਆਂ ਜਾਂ ਕੇਂਦਰੀਕ੍ਰਿਤ ਨਿਯੰਤਰਣ ਵਿੱਚ ਨਹੀਂ ਹਨ , ਪਰ ਤੁਹਾਡੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਹਨ, ਜਿਸਦੀ ਮਲਕੀਅਤ ਤੁਹਾਡੀ ਹੈ।</p>
-          <p>ਅਸੀਂ ਇੰਟਰਨੈੱਟ ਨੂੰ ਏਕਾਧਿਕਾਰ ਤੋਂ ਮੁਕਤ ਕਰ ਰਹੇ ਹਾਂ ਅਤੇ ਇਸਨੂੰ ਲੋਕਾਂ ਨੂੰ ਇੱਕ ਸਮੇਂ 'ਤੇ ਇੱਕ ਨਾਮ, ਇੱਕ ਭਾਸ਼ਾ, ਇੱਕ ਪਛਾਣ ਵਾਪਸ ਦੇ ਰਹੇ ਹਾਂ।</p>
-        </div>
-        <div class="top-image">
-          <img src="img5.png" alt="ਸਾਡੇ ਬਾਰੇ ਚਿੱਤਰ">
-        </div>
-      </div>
+  <div class="top-container">
+    <div class="top-text">
+      <h1 class="about-heading">ਸਾਡੇ ਬਾਰੇ</h1>
 
-      <div class="grid">
-        <div class="grid-box">
-          <h3>ਬਿਲਡਰਾਂ ਲਈ</h3>
-          <p>ਓਪਨਸੇਤੂ ਨਵੀਨਤਾ ਲਈ ਇੱਕ ਖੇਡ ਦਾ ਮੈਦਾਨ ਹੈ। ਸਥਾਨਕ ਐਪਸ ਬਣਾਉਣ ਵਾਲੇ ਡਿਵੈਲਪਰਾਂ ਤੋਂ ਲੈ ਕੇ ਡਿਜੀਟਲ ਪਛਾਣ ਦੀ ਮੁੜ ਕਲਪਨਾ ਕਰਨ ਵਾਲੇ ਸਟਾਰਟਅੱਪਸ ਤੱਕ, ਭਾਰਤ ਕੋਲ ਹੁਣ ਇੱਕ ਵਿਕੇਂਦਰੀਕ੍ਰਿਤ ਨੀਂਹ ਤਿਆਰ ਹੈ। ਨੇਟਿਵ ਡੋਮੇਨ ਨਾਮ, ਬਹੁ-ਭਾਸ਼ਾਈ ਲੌਗਇਨ, ਅਤੇ ਇੱਕ ਓਪਨ DNS ਦੇ ਨਾਲ, ਤੁਸੀਂ ਅਜਿਹੀਆਂ ਸੇਵਾਵਾਂ ਬਣਾ ਸਕਦੇ ਹੋ ਜੋ 1.4 ਬਿਲੀਅਨ ਆਵਾਜ਼ਾਂ ਨਾਲ ਉਹਨਾਂ ਦੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਗੱਲ ਕਰਦੀਆਂ ਹਨ।</p>
-        </div>
-        <div class="grid-box">
-          <h3>ਨਿਵੇਸ਼ਕਾਂ ਲਈ</h3>
-          <p>ਭਾਰਤ ਖੁੱਲ੍ਹੇ ਇੰਟਰਨੈੱਟ 'ਤੇ ਮਨੁੱਖਤਾ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਹਿੱਸਾ ਹੈ। ਓਪਨਸੇਟੂ ਸਿਰਫ਼ ਬੁਨਿਆਦੀ ਢਾਂਚਾ ਨਹੀਂ ਹੈ, ਇਹ ਬੁਨਿਆਦੀ ਢਾਂਚਾ ਹੈ। ਅਸੀਂ ਭਾਸ਼ਾ ਦੀ ਰੁਕਾਵਟ ਨੂੰ ਦੂਰ ਕਰਕੇ ਅਤੇ ਵਿਅਕਤੀਆਂ ਨੂੰ ਡਿਜੀਟਲ ਮਾਲਕੀ ਵਾਪਸ ਕਰਕੇ ਅਗਲੇ ਅਰਬ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਅਨਲੌਕ ਕਰ ਰਹੇ ਹਾਂ। ਈਕੋਸਿਸਟਮ ਓਐਸ ਅਤੇ ਬ੍ਰਾਊਜ਼ਰ ਵਰਗੀਆਂ ਇਨਫਰਾ ਟੈਕ ਤੋਂ ਲੈ ਕੇ ਡਿਜੀਟਲ ਪਛਾਣ, ਭੁਗਤਾਨ, ਵਣਜ ਅਤੇ ਸੰਚਾਰ ਵਰਗੀਆਂ ਸੇਵਾਵਾਂ ਤੱਕ ਹਰ ਚੀਜ਼ ਨੂੰ ਮੁੜ ਆਕਾਰ ਦੇਵੇਗਾ, ਇਹ ਸਭ ਭਾਰਤ ਦੀ ਸਭ ਤੋਂ ਬੁਨਿਆਦੀ ਪਰਤ 'ਤੇ ਸਵਾਰ ਹੈ: ਇਸਦਾ ਆਪਣਾ ਇੰਟਰਨੈੱਟ। ਇਸ 'ਤੇ ਬਣ ਰਹੀਆਂ ਰੇਲਾਂ ਅਤੇ ਸੰਸਥਾਪਕਾਂ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ ਅਤੇ ਤੁਸੀਂ ਡਿਜੀਟਲ ਭਾਰਤ ਦੇ ਭਵਿੱਖ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ।</p>
-        </div>
-        <div class="grid-box">
-          <h3>ਸਰਕਾਰਾਂ ਲਈ</h3>
-          <p>ਡਿਜੀਟਲ ਜਨਤਕ ਸਾਮਾਨ ਡਿਜੀਟਲ ਜਨਤਕ ਬੁਨਿਆਦੀ ਢਾਂਚੇ ਦੇ ਹੱਕਦਾਰ ਹਨ। ਓਪਨਸੇਟੂ ਪਾਰਦਰਸ਼ਤਾ, ਸਮਾਵੇਸ਼ ਅਤੇ ਪ੍ਰਭੂਸੱਤਾ ਦੇ ਮੂਲ ਵਿੱਚ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਅਸੀਂ ਇੰਡੀਆ ਸਟੈਕ ਦੇ ਦ੍ਰਿਸ਼ਟੀਕੋਣ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹਾਂ ਅਤੇ ਹਰੇਕ ਨਾਗਰਿਕ ਨੂੰ ਉਨ੍ਹਾਂ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਡਿਜੀਟਲ ਸੇਵਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਲਈ ਸ਼ਕਤੀ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਾਂ। ਪੇਂਡੂ ਪਹੁੰਚ ਤੋਂ ਲੈ ਕੇ ਰਾਸ਼ਟਰੀ ਪੱਧਰ ਤੱਕ, ਓਪਨਸੇਟੂ ਸਰਕਾਰਾਂ ਨੂੰ ਪੂਰੇ-ਸਟੈਕ ਡਿਜੀਟਲ ਸਮਾਵੇਸ਼ ਲਈ ਇੱਕ ਸੁਰੱਖਿਅਤ, ਪ੍ਰਭੂਸੱਤਾ ਸੰਪੰਨ ਰਸਤਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ। ਭਾਰਤ ਨੂੰ ਗਲੋਬਲ ਇੰਟਰਨੈੱਟ ਤੱਕ ਪਹੁੰਚਣ ਦੀ ਜ਼ਰੂਰਤ ਨਹੀਂ ਹੈ। ਓਪਨਸੇਟੂ ਦੇ ਨਾਲ, ਅਸੀਂ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ, ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ 'ਤੇ ਅੱਗੇ ਵਧਦੇ ਹਾਂ।</p>
-        </div>
-      </div>
+      <h2>ਓਪਨਸੇਤੁ ਭਾਰਤ ਦੇ ਆਪਣੇ ਇੰਟਰਨੇਟ ਵੱਲ ਦਾ ਪੁਲ ਹੈ।</h2>
+      <p>ਅਸੀਂ ਹਰ ਭਾਰਤੀ ਨੂੰ ਆਪਣੀ ਮਾਤ ਭਾਸ਼ਾ ਵਿੱਚ ਵੈੱਬ ਤੱਕ ਪਹੁੰਚ ਦੇਣ ਲਈ ਸਮਰਥ ਬਣਾਉਂਦੇ ਹਾਂ, ਨਾ ਕੋਈ ਅੰਗਰੇਜ਼ੀ, ਨਾ ਨਵਾਂ ਐਪ, ਨਾ ਕੋਈ ਗੇਟਕੀਪਰ।</p>
+      <p>ਇੱਕ ਮੁਫ਼ਤ, ਡਿਸੈਂਟਰਲਾਈਜ਼ਡ ਅਤੇ ਸ਼ਾਮਿਲ ਇੰਟਰਨੇਟ ਦੇ ਵਿਜ਼ਨ ਤੋਂ ਜਨਮ ਲਿਆ, ਓਪਨਸੇਤੁ ਯੂਜ਼ਰਾਂ ਨੂੰ ਸਿਰਫ ਆਪਣੇ DNS ਸੈਟਿੰਗ ਬਦਲ ਕੇ ਹੈਂਡਸ਼ੇਕ ਨਾਲ ਸੰਚਾਲਿਤ ਬਹੁਭਾਸ਼ੀ ਵੈੱਬ ਤੱਕ ਪਹੁੰਚ ਦੇਂਦਾ ਹੈ ਜੋ ਭਾਰਤ ਵਿੱਚ ਜੜਿਆ ਹੋਇਆ ਹੈ। ਇਹ ਇੰਟਰਨੇਟ ਤੁਹਾਡੇ ਸ਼ਰਤਾਂ 'ਤੇ ਹੈ, ਜਿੱਥੇ ਡੋਮੇਨ ਨਾਮ ਵਿਦੇਸ਼ੀ ਲਿਪੀਆਂ ਜਾਂ ਕੇਂਦਰੀਕ੍ਰਿਤ ਨਿਯੰਤਰਣ ਵਿੱਚ ਨਹੀਂ, ਸਗੋਂ ਤੁਹਾਡੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ, ਤੁਹਾਡੇ ਮਾਲਕੀ ਹੱਕ ਵਾਲੇ ਹਨ।</p>
+      <p>ਅਸੀਂ ਇੰਟਰਨੇਟ ਨੂੰ ਮੋਨੋਪੋਲੀਜ਼ ਤੋਂ ਮੁੜ ਵਾਪਸ ਲੋਕਾਂ ਕੋਲ ਲੈ ਰਹੇ ਹਾਂ, ਇੱਕ ਨਾਮ, ਇੱਕ ਭਾਸ਼ਾ, ਇੱਕ ਪਛਾਣ ਇਕ ਸਮੇਂ ਵਿੱਚ।</p>
     </div>
-  </section>
+    <div class="top-image">
+      <img src="img5.png" alt="ਸਾਡੇ ਬਾਰੇ ਚਿੱਤਰ">
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="grid-box">
+      <h3>ਬਿਲਡਰਾਂ ਲਈ</h3>
+      <p>ਓਪਨਸੇਤੁ ਨਵੀਨਤਾ ਲਈ ਇੱਕ ਖੇਡ ਦਾ ਮੈਦਾਨ ਹੈ। ਵਿਕਾਸਕਾਰ ਜੋ ਦੇਸੀ ਐਪ ਬਣਾਉਂਦੇ ਹਨ ਜਾਂ ਸਟਾਰਟਅਪ ਜੋ ਡਿਜੀਟਲ ਪਛਾਣ ਨੂੰ ਨਵੇਂ ਸਿਰੇ ਨਾਲ ਸੋਚ ਰਹੇ ਹਨ, ਭਾਰਤ ਹੁਣ ਇੱਕ ਡਿਸੈਂਟਰਲਾਈਜ਼ਡ ਬੁਨਿਆਦ ਰੱਖਦਾ ਹੈ ਜੋ ਸੱਜਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਮੂਲ ਡੋਮੇਨ ਨਾਂ, ਬਹੁਭਾਸ਼ੀ ਲੋਗਿਨ ਅਤੇ ਖੁੱਲਾ DNS ਦੇ ਨਾਲ, ਤੁਸੀਂ ਸੇਵਾਵਾਂ ਬਣਾ ਸਕਦੇ ਹੋ ਜੋ 1.4 ਬਿਲੀਅਨ ਆਵਾਜ਼ਾਂ ਨਾਲ, ਉਹਨਾਂ ਦੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸਿੱਧਾ ਗੱਲ ਕਰਦੀਆਂ ਹਨ।</p>
+    </div>
+    <div class="grid-box">
+      <h3>ਨਿਵੇਸ਼ਕਾਂ ਲਈ</h3>
+      <p>ਭਾਰਤ ਖੁੱਲੇ ਇੰਟਰਨੇਟ 'ਤੇ ਮਨੁੱਖਤਾ ਦਾ ਸਭ ਤੋਂ ਵੱਡਾ ਹਿੱਸਾ ਹੈ। ਓਪਨਸੇਤੁ ਸਿਰਫ ਢਾਂਚਾ ਨਹੀਂ, ਇਹ ਇੰਫਰਾ-ਪਾਵਰ ਹੈ। ਅਸੀਂ ਭਾਸ਼ਾ ਦੀ ਰੁਕਾਵਟ ਹਟਾ ਕੇ ਅਤੇ ਡਿਜੀਟਲ ਮਾਲਕੀ ਨੂੰ ਵਿਅਕਤੀਆਂ ਵਾਪਸ ਦੇ ਕੇ ਅਗਲੇ ਬਿਲੀਅਨ ਯੂਜ਼ਰਾਂ ਨੂੰ ਖੋਲ੍ਹ ਰਹੇ ਹਾਂ। ਇਹ ਪਰੀਵਾਰਵਾਤਾਵਰਣ OS ਅਤੇ ਬ੍ਰਾਊਜ਼ਰ ਵਰਗੇ ਇੰਫਰਾ ਤਕਨਾਲੋਜੀ ਤੋਂ ਲੈ ਕੇ ਡਿਜੀਟਲ ਪਛਾਣ, ਭੁਗਤਾਨ, ਵਪਾਰ ਅਤੇ ਸੰਚਾਰ ਸੇਵਾਵਾਂ ਤੱਕ ਸਭ ਕੁਝ ਮੁੜ-ਰੂਪ ਦੇਵੇਗਾ, ਜੋ ਭਾਰਤ ਦੀ ਸਭ ਤੋਂ ਮੂਲ ਬੁਨਿਆਦ ਤੇ—ਆਪਣੇ ਇੰਟਰਨੇਟ—ਤੇ ਨਿਰਭਰ ਹੈ। ਇਸ 'ਤੇ ਬਣਾਉਣ ਵਾਲੇ ਫਾਊਂਡਰਾਂ ਅਤੇ ਰੇਲਾਂ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ ਅਤੇ ਤੁਸੀਂ ਡਿਜੀਟਲ ਭਾਰਤ ਦੇ ਭਵਿੱਖ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰ ਰਹੇ ਹੋ।</p>
+    </div>
+    <div class="grid-box">
+      <h3>ਸਰਕਾਰਾਂ ਲਈ</h3>
+      <p>ਡਿਜੀਟਲ ਪਬਲਿਕ ਗੁਡਜ਼ ਡਿਜੀਟਲ ਪਬਲਿਕ ਇੰਫਰਾਸਟਰੱਕਚਰ ਦੇ ਹੱਕਦਾਰ ਹਨ। ਓਪਨਸੇਤੁ ਪਾਰਦਰਸ਼ਤਾ, ਸ਼ਾਮਿਲਤਾ ਅਤੇ ਸੰਵਿਧਾਨਿਕਤਾ ਦੇ ਮੂਲ ਸਿਧਾਂਤਾਂ ਦੇ ਨਾਲ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਅਸੀਂ ਇੰਡੀਆ ਸਟੈਕ ਦੇ ਵਿਜ਼ਨ ਨਾਲ ਮਿਲਦੇ ਹਾਂ ਅਤੇ ਹਰ ਨਾਗਰਿਕ ਨੂੰ ਉਹਨਾਂ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਡਿਜੀਟਲ ਸੇਵਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਦੇਣ ਲਈ ਸ਼ਕਤੀਵਾਨ ਬਣਾਉਂਦੇ ਹਾਂ। ਪਿੰਡਾਂ ਤੋਂ ਰਾਸ਼ਟਰੀ ਪੱਧਰ ਤੱਕ, ਓਪਨਸੇਤੁ ਸਰਕਾਰਾਂ ਨੂੰ ਪੂਰਾ-ਸਟੈਕ ਡਿਜੀਟਲ ਸ਼ਾਮਿਲਤਾ ਲਈ ਇੱਕ ਸੁਰੱਖਿਅਤ ਅਤੇ ਸੰਵਿਧਾਨਿਕ ਰਾਹ ਦਿੰਦਾ ਹੈ।  
+ਭਾਰਤ ਨੂੰ ਗਲੋਬਲ ਇੰਟਰਨੇਟ ਦੇ ਪਿੱਛੇ ਨਹੀਂ ਰਹਿਣਾ। ਓਪਨਸੇਤੁ ਨਾਲ, ਅਸੀਂ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ, ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ 'ਤੇ ਅੱਗੇ ਵਧ ਰਹੇ ਹਾਂ।
+</p>
+    </div>
+  </div>
+</div>
+</div>
+
 </body>
 </html>
